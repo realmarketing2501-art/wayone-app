@@ -1,0 +1,54 @@
+/* WAY ONE — Custom Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --wo-bronze: #cd7f32;
+  --wo-silver: #c0c0c0;
+  --wo-gold: #ffd700;
+  --wo-zaffiro: #2196f3;
+  --wo-diamante: #9c27b0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Level badge colors */
+.badge-level-pre { background: rgba(150,150,150,0.15); color: #999; }
+.badge-level-bronz { background: rgba(205,127,50,0.2); color: #cd7f32; }
+.badge-level-silver { background: rgba(192,192,192,0.2); color: #c0c0c0; }
+.badge-level-silver-elite { background: rgba(192,192,192,0.25); color: #e0e0e0; }
+.badge-level-gold { background: rgba(255,215,0,0.2); color: #ffd700; }
+.badge-level-zaffiro { background: rgba(33,150,243,0.2); color: #2196f3; }
+.badge-level-diamante { background: rgba(156,39,176,0.2); color: #9c27b0; }
+
+/* Glow effects */
+.glow-green { box-shadow: 0 0 20px rgba(0, 230, 118, 0.15); }
+.glow-gold { box-shadow: 0 0 20px rgba(255, 215, 0, 0.15); }
+
+/* Tree connector lines */
+.tree-line {
+  border-left: 2px solid oklch(var(--p) / 0.3);
+  margin-left: 1rem;
+  padding-left: 1rem;
+}
+
+/* Scrollbar - adapts to theme */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+[data-theme="tasklet-dark"] ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+[data-theme="tasklet-light"] ::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 3px; }
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in { animation: fadeInUp 0.3s ease-out; }
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
